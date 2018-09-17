@@ -67,7 +67,36 @@ li a:hover {
     margin: 0 auto;
 }
 
-#profile-pic {
-    background-image: url('img/me.jpg');
-    border-radius: 40px;
+.profile-pic {
+    border-radius: 400px;
+    border-style: solid;
+    border-color: #724552;
+    border-width: 15px;
+    width: 250px;
+    height: auto;
+    float: left;
+    margin-top: 120px;
+
+}
+.blurb {
+    float: right;
+    height: auto;
+    width: 60%;
+    margin-top: 175px;
+    font-family: 'Open Sans';
+    color: white;
+    line-height: 2em;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+footer p {
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 0.8em;
 }
