@@ -1,11 +1,15 @@
 body {
-    background-color: #192231;
+    /*background-color: #1F2833;*/
+    background: url('img/bg.png') no-repeat;
+    background-size:175% auto;
+    padding-bottom:60px;
+
 }
 
 #logo {
     font-size: 4em;
     font-family: 'IBM Plex Sans', sans-serif;
-    color: #E2E2E2;
+    color: #c5c6c7;
     text-align: center;
     margin-top: 25px;
 }
@@ -16,8 +20,8 @@ body {
 }
 
 #logo .highlight {
-    color: #192231;
-    background-color: #E2E2E2;
+    color: #66fcf1;
+    background-color: #142833;
     padding: 0px 8px;
     margin-left: -10px;
 }
@@ -48,22 +52,23 @@ li a:hover {
     color: white;
 }
 
-#maincontent {
+#mainpanel {
     /*background-color: #985E6D;*/
-    background: repeating-linear-gradient(
-  45deg,
-  #985E6D,
-  #985E6D 20px,
-  #9E6875 20px,
-  #9E6875 40px);
     width: 100%;
     height: 425px;
+    background: repeating-linear-gradient(45deg, rgba(69,162,158,0.08), rgba(69,162,158,0.08) 20px, rgba(139,239,234,0.08) 20px, rgba(139,239,234,0.08) 40px);
+}
+
+#secondarypanel {
+    /*background-color: #985E6D;*/
+    width: 100%;
+    height: 625px;
 }
 
 #stripe {
     width: 100%;
-    height: 10px;
-    background-color: #985E6D;
+    height: 6px;
+    background-color: #45a29e;
 }
 
 #container {
@@ -77,17 +82,28 @@ li a:hover {
     height: auto;
     margin-top: 100px;
     font-family: 'Roboto Mono';
-    color: white;
+    color: #66fcf1;
     line-height: 2em;
     text-align: right;
-    font-size: 2.1em;
+    font-size: 2.4em;
 }
+
+.secondary-section-title {
+    height: auto;
+    margin-top: 100px;
+    font-family: 'Roboto Mono';
+    color: #66fcf1;
+    line-height: 2em;
+    text-align:left;
+    font-size: 2.4em;
+}
+
 
 .profile-pic {
     border-radius: 400px;
     border-style: solid;
-    border-color: #724552;
-    border-width: 15px;
+    border-color: #45a29e;
+    border-width: 10px;
     width: 250px;
     height: 250px;
     float: left;
@@ -96,6 +112,18 @@ li a:hover {
     background-position: center; 
     background-size: 100%;
     transition: .25s ease;
+}
+
+.right-picture {
+    background-image: url('img/demo-vid.png');
+    float: right;
+    background-position: center; 
+    width: 400px;
+    height: 200px;
+    background-size: 100%;
+    border-style: solid;
+    border-color: #45a29e;
+    border-width: 6px;
 }
 
 .profile-pic:hover {
@@ -118,23 +146,23 @@ li a:hover {
     font-size: 1.1em;
 }
 
-footer p {
-    color: white;
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+.secondary-blurb {
+    float: left;
+    height: auto;
+    width: 50%;
+    margin-top: 10px;
     font-family: 'Open Sans';
-    font-size: 0.8em;
+    color: white;
+    line-height: 2em;
+    text-align: center;
+    font-size: 1.1em;
 }
 
 @media only screen and (min-width: 2560px) {
 
     #container {
         width: 50%;
-    }
-
+    } 
 }
 
 
@@ -153,7 +181,7 @@ footer p {
         margin-top: 40px;
     }
 
-    #maincontent {
+    #mainpanel {
         height: 600px;
     }
 
@@ -164,9 +192,32 @@ footer p {
 
     }
 
+    .secondary-blurb {
+        float: none;
+        margin-top: 15px;
+        width: 100%;
+
+    }
+
     .section-title {
         margin-top: 10px;
     }
+
+    .secondary-section-title {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    body {
+        background-size:300% auto;
+    }
+    .right-picture {
+        display: block;
+        float:none;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    
 }
 
 @media only screen and (max-width: 831px) {
@@ -176,14 +227,31 @@ footer p {
         width: 200px;
         border-width: 10px;
     }
+    body {
+        background-size:400% auto;
+    }
+    
 }
 
 
 @media only screen and (max-width: 570px) {
 
-    #maincontent {
+    #mainpanel {
         height: 650px;
     }
+    #secondarypanel {
+        height: 650px;
+    }
+    body {
+        background-size:800% auto;
+    }
+
+    .right-picture {
+        width: 250px;
+        background-size: fill;
+    }
+
+    
 
 }
 
@@ -198,15 +266,20 @@ footer p {
         display: block;
     }
 
-    footer p {
-        position: relative;
-        bottom: 0px;
-    }
-
-    #maincontent {
+    #mainpanel {
         margin-bottom: 20px;
     }
 
+    #secondarypanel {
+        margin-bottom: 20px;
+    }
+
+    .secondary-section-title {
+        font-size: 2em;
+    }
+
+
+    
 }
 
 @media only screen and (max-width: 518px) {
@@ -214,10 +287,12 @@ footer p {
     .blurb {
         font-size: 1em;
     }
-
-    footer p {
-        bottom: -20px;
-        margin-bottom: 20px;
+    .secondary-blurb {
+        font-size: 1em;
     }
+    #secondarypanel {
+        height: 800px;
+    }
+
 
 }
